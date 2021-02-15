@@ -12,10 +12,6 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 1rem;
-    max-width: 1024px;
     a {
         -webkit-text-decoration: none;
         text-decoration: none;
@@ -30,4 +26,21 @@
             margin: 0;
         }
     }
+}
+
+.links {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    z-index: 1;
 }

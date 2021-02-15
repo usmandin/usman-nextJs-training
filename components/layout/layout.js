@@ -1,6 +1,6 @@
 import Head from 'next/head'
-
 import Header from '../header/header'
+import Intro from '../Intro/Intro'
 
 export default function Layout ({
     title = 'Home Page',
@@ -14,6 +14,10 @@ export default function Layout ({
             </Head>
 
             <Header/>
+
+            <div className="container">
+                <Intro>The React Framework for Production</Intro>
+            </div>
         </div>
     )
 }
