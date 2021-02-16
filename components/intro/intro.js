@@ -1,12 +1,14 @@
 import styles from "./intro.module.scss"
 
-const Intro = ({
-    children
-}) => {
+const Intro = ({children}) => {
   return (
-    <h1 className={styles.title}>
-        {children}
-    </h1>
+    <>
+    <div className="container">
+        <h1 className={styles.title}>
+            {children}
+        </h1>
+    </div>
+    </>
   )
 }
 

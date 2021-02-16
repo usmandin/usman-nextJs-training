@@ -1,12 +1,10 @@
 import Head from 'next/head'
 import Header from '../header/header'
-import Intro from '../Intro/Intro'
+import Intro from '../intro/intro'
 
-export default function Layout ({
-    title = 'Home Page',
-}) {
+export default function Layout ({children,title}) {
     return (
-        <div>
+        <>
             <Head>
                 <title>{title}</title>
                 <meta charSet="utf-8" />
@@ -14,10 +12,9 @@ export default function Layout ({
             </Head>
 
             <Header/>
+            
+            {children}
 
-            <div className="container">
-                <Intro>The React Framework for Production</Intro>
-            </div>
-        </div>
+        </>
     )
 }

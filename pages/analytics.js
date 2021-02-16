@@ -1,11 +1,11 @@
 import Layout from '../components/layout/layout'
 import Intro from '../components/intro/intro'
 
-export default function Home() {
+export default function Analytics() {
 
     return (
-        <Layout title="Home Page">
-            <Intro> Home  Page </Intro>
+        <Layout title="Analytics Page">
+            <Intro> Analytics Page </Intro>
         </Layout>
     )
 }
