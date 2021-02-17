@@ -1,30 +1,24 @@
-import styles from "./button.module.scss"
+import Link from 'next/link'
+import Styles from "./button.module.scss"
 
 const Button = ({
-  children,
-  variant = "",
-  className = "btn",
-  icon = "",
-  type = "button",
-  size = "",
-  position = "left",
-  block = false,
-  ...props
+    children,
+    variant = "",
+    className = "btn",
+    icon = "",
+    size = "",
+    position = "left",
+    href="/",
+    block = false,
+    ...props
 }) => {
-  return (
-    <button
-      className={
-        `${className} 
-        ${styles.btn} 
-        ${variant === "primaryBtn" ? styles.primaryBtn : ""}
-        ${variant === "secondaryBtn" ? styles.secondaryBtn : ""}`.trim()
-      }
-      type={type}
-      {...props}
-    >
-      {children}
-    </button>
-  )
-}
+    return (
+        <Link href={href}>
+            <a className={`${className} ${Styles.btn} ${variant === "primaryBtn" ? Styles.primaryBtn : ""} ${variant === "secondaryBtn" ? Styles.secondaryBtn : ""}`.trim()} {...props}>
+                {children}
+            </a>
+        </Link>
+    )
+};
 
 export default Button

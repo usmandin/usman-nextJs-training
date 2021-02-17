@@ -33,7 +33,7 @@ const navBar = () => {
                     <a>Enterprise</a>
                 </Link>
 
-                <Button size="sm" variant="primaryBtn">
+                <Button className="btn" size="sm" variant="primaryBtn">
                     Learn
                 </Button>
             </div>
