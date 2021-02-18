@@ -8,51 +8,101 @@ import ColorCard from "../components/colorCard/colorCard";
 export default function Showcase() {
   const productDataArry = [
     {
-      pId: "0",
-      pHeading: "First Card",
-      pDesc:
+      cardId: "0",
+      cardTitle: "1st Card",
+      cardHeading: "1st Card",
+      cardImg: "/thumbnails/108665600-400x300.webp",
+      cardDesc:
         "Forms are an essential part of the web. This guide will demonstrate how to build a performant,",
-      pLinkText: "Go to First Card",
+      cardList: [{ listData: "List One" }, { listData: "List Two" }],
+      cardLinkText: "Go to First Card",
+      cardType: "Product",
+      position: "left",
     },
     {
-      pId: "1",
-      pHeading: "Second Card",
-      pDesc:
+      cardId: "1",
+      cardTitle: "2nd Card",
+      cardHeading: "2nd Card",
+      cardImg: "/thumbnails/108665600-400x300.webp",
+      cardDesc:
         "Forms are an essential part of the web. This guide will demonstrate how to build a performant,",
-      pLinkText: "Go to Second Card",
+      cardList: "",
+      cardLinkText: "Go to First Card",
+      cardType: "Product",
+      position: "left",
     },
     {
-      pId: "2",
-      pHeading: "Third Card",
-      pDesc:
+      cardId: "2",
+      cardTitle: "2nd Card",
+      cardHeading: "2nd Card",
+      cardImg: "",
+      cardDesc:
         "Forms are an essential part of the web. This guide will demonstrate how to build a performant,",
-      pLinkText: "Go to Third Card",
+      cardList: "",
+      cardLinkText: "Go to First Card",
+      cardType: "Product",
+      position: "left",
+    },
+    {
+      cardId: "3",
+      cardTitle: "",
+      cardHeading: "4th Card",
+      cardImg: "",
+      cardDesc: "",
+      cardList: [{ listData: "List One" }, { listData: "List Two" }],
+      cardLinkText: "",
+      cardType: "Product",
+      position: "left",
+    },
+    {
+      cardId: "4",
+      cardTitle: "5th Card",
+      cardHeading: "5th Card",
+      cardImg: "",
+      cardDesc:
+        "Forms are an essential part of the web. This guide will demonstrate how to build a performant,",
+      cardList: "",
+      cardLinkText: "",
+      cardType: "Product",
+      position: "left",
+    },
+    {
+      cardId: "5",
+      cardTitle: "6th Card",
+      cardHeading: "6th Card",
+      cardImg: "",
+      cardDesc:
+        "Forms are an essential part of the web. This guide will demonstrate how to build a performant,",
+      cardList: "",
+      cardLinkText: "",
+      cardType: "Success",
+      position: "left",
+    },
+    {
+      cardId: "6",
+      cardTitle: "7th Card",
+      cardHeading: "7th Card",
+      cardImg: "",
+      cardDesc:
+        "Forms are an essential part of the web. This guide will demonstrate how to build a performant,",
+      cardList: "",
+      cardLinkText: "",
+      cardType: "Danger",
+      position: "left",
+    },
+    {
+      cardId: "7",
+      cardTitle: "8th Card",
+      cardHeading: "8th Card",
+      cardImg: "",
+      cardDesc:
+        "Forms are an essential part of the web. This guide will demonstrate how to build a performant,",
+      cardList: "",
+      cardLinkText: "",
+      cardType: "Primary",
+      position: "left",
     },
   ];
-  const colorCardDataArry = [
-    {
-      id: "0",
-      heading: "First Card",
-      desc:
-        "Forms are an essential part of the web. This guide will demonstrate how to build a performant,",
-      variant: "primary",
-    },
-    {
-      id: "0",
-      heading: "Second Card",
-      desc:
-        "Forms are an essential part of the web. This guide will demonstrate how to build a performant,",
-      variant: "success",
-    },
-    {
-      id: "0",
-      heading: "Third Card",
-      desc:
-        "Forms are an essential part of the web. This guide will demonstrate how to build a performant,",
-      variant: "danger",
-    },
-  ];
-
   return (
     <>
       <Layout title="Showcase Page">
@@ -60,32 +110,24 @@ export default function Showcase() {
           <Intro> Showcase Page </Intro>
         </Container>
 
-        <Container>
-          {productDataArry.map(function (data, i) {
-            return (
-              <ProductCard
-                cardHeading={data.pHeading}
-                cardText={data.pDesc}
-                cardBtnText={data.pLinkText}
-                position="left"
-              ></ProductCard>
-            );
-          })}
-        </Container>
+        {productDataArry.map(function (data, i) {
+          return (
+              <Container>
+                <ProductCard
+                  cardTitle={data.cardTitle}
+                  cardHeading={data.cardHeading}
+                  cardImg={data.cardImg}
+                  cardText={data.cardDesc}
+                  cardList={data.cardList}
+                  cardBtnText={data.cardLinkText}
+                  cardType={data.cardType}
+                  position="left"
+                ></ProductCard>
+              </Container>
 
-        <Container>
-          {colorCardDataArry.map(function (colorData, i) {
-            return (
-              <ColorCard
-                colorCardHeading={colorData.heading}
-                colorCardText={colorData.desc}
-                colorCardVariant={colorData.variant}
-                position="left"
-              ></ColorCard>
             );
           })}
-        </Container>
-      </Layout>
+       </Layout>
     </>
   );
 }
