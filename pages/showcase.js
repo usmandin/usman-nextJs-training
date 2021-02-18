@@ -3,7 +3,6 @@ import Layout from "../components/layout/layout";
 import Intro from "../components/intro/intro";
 import Container from "../components/container/container";
 import ProductCard from "../components/productCard/productCard";
-import ColorCard from "../components/colorCard/colorCard";
 
 export default function Showcase() {
   const productDataArry = [
