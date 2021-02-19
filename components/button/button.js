@@ -4,17 +4,18 @@ import Styles from "./button.module.scss"
 const Button = ({
     children,
     variant = "",
-    className = "btn",
+    className ="",
     icon = "",
     size = "",
-    position = "left",
+    position = "",
     href="/",
+    state,
     block = false,
     ...props
 }) => {
     return (
         <Link href={href}>
-            <a className={`${className} ${Styles.btn} ${variant === "primaryBtn" ? Styles.primaryBtn : ""} ${variant === "secondaryBtn" ? Styles.secondaryBtn : ""}`.trim()} {...props}>
+            <a className={`${className === "cardLink" ? Styles.cardLink : ""} ${className === "navLink" ? Styles.navLink : ""} ${state === "Active" ? Styles.active : ""} ${state === "Disabled" ? Styles.disabled : ""} ${className === "btn" ? Styles.btn : ""} ${variant === "primaryBtn" ? Styles.primaryBtn : ""} ${variant === "secondaryBtn" ? Styles.secondaryBtn : ""}`.trim()} {...props}>
                 {children}
             </a>
         </Link>

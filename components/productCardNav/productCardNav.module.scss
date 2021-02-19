@@ -1,0 +1,16 @@
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    .navLlink {
+        display: block;
+        padding: .5rem 1rem;
+        text-decoration: none;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+    }
+    &.navPills {
+        
+    }
+}

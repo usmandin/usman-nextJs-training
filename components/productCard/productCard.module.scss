@@ -5,14 +5,12 @@
     background-clip: border-box;
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
-    width: 18rem;
     margin: 0 2rem 2rem 0;
-    
     &.bgPrimary {
         background-color: #0d6efd!important;
         color: white;
     }
-    .bgSecondary {
+    &.bgSecondary {
         background-color: #6c757d!important;
     }
     &.bgSuccess {
@@ -23,41 +21,32 @@
         background-color: #dc3545!important;
         color: white;
     }
-    .bgWarning {
+    &.bgWarning {
         background-color: #ffc107!important;
     }
-    .bgInfo {
+    &.bgInfo {
         background-color: #0dcaf0!important;
     }
-    .bgLight {
+    &.bgLight {
         background-color: #f8f9fa!important;
     }
-    .bgDark {
+    &.bgDark {
         background-color: #212529!important;
     }
-
-    .cardHeader {
-        padding: .5rem 1rem;
-        margin-bottom: 0;
-        background-color: rgba(0,0,0,.03);
-        border-bottom: 1px solid rgba(0,0,0,.125);
-    }
-
+    
     .cardBody {
         flex: 1 1 auto;
         padding: 1rem 1rem;
     }
     .cardTitle {
         margin-bottom: .5rem;   
-    }
-
+    }    
     .listGroup {
         display: flex;
         flex-direction: column;
         padding-left: 0;
         margin-bottom: 0;
         border-radius: .25rem;
-        
         .listGroupItem {
             position: relative;
             display: block;
@@ -65,23 +54,42 @@
             text-decoration: none;
             background-color: #fff;
             border: 1px solid rgba(0,0,0,.125);
-            border-width: 0 0 1px;            
+            &:first-child {
+                border-top-left-radius: calc(.25rem - 1px);
+                border-top-right-radius: calc(.25rem - 1px);
+            }
+            &:last-child {
+                border-bottom-right-radius: calc(.25rem - 1px);
+                border-bottom-left-radius: calc(.25rem - 1px);
+            }
         }
     }
     .listGroupFlush {
         border-radius: 0;
         > .listGroupItem {
             border-width: 0 0 1px;
-            &:first-child {
-                border-top-width: 0;
-                border-top-left-radius: calc(.25rem - 1px);
-                border-top-right-radius: calc(.25rem - 1px);
-            }
-            &:last-child {
-                border-bottom-width: 0;
-                border-bottom-right-radius: calc(.25rem - 1px);
-                border-bottom-left-radius: calc(.25rem - 1px);
-            }
         }
+    }
+    .cardFooter {
+        padding: .5rem 1rem;
+        background-color: rgba(0,0,0,.03);
+        border-top: 1px solid rgba(0,0,0,.125);
+        &:last-child {
+            border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
+        }
+    }
+    .card>.cardHeader+.listGroup,
+    .card>.listGroup+.cardFooter {
+        border-top: 0;
+    }
+
+    &.cardSmall {
+        width: 33.3%;
+    }
+    &.cardMedium {
+        width: 50%;
+    }
+    &.cardLarge {
+        width: 100%;
     }
 }

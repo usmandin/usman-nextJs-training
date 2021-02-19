@@ -7,8 +7,8 @@ body {
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: #0d6efd;
+  text-decoration: underline;
 }
 
 * {
@@ -40,4 +40,13 @@ dl, ol, ul {
 
 ol, ul {
   padding-left: 2rem;
+}
+.textCenter {
+  text-align: center !important;
+}
+.textRight {
+  text-align: right !important;
+}
+.textLeft {
+  text-align: Left !important;
 }
