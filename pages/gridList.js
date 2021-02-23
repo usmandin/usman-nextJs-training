@@ -10,7 +10,7 @@ export default function Document() {
 
       <Container>
         <ContactCard
-            cardVariant ="horizontal card" // "contact card", "portraits card" , "horizontal card"
+            cardVariant ="contact card" // "contact card", "portraits card" , "horizontal card"
             userName={"salman ali"}
             userShortName={"SA"}
             userDesignation={"senior ui developer"}
@@ -18,7 +18,28 @@ export default function Document() {
             userImage={"/asstes/profileImg.png"}
             userEmail={"salman@empglabs.com"}
             userCall={"+3211234567"}
-        ></ContactCard>       
+        ></ContactCard>
+        
+        <ContactCard
+        cardVariant ="portraits card" // "contact card", "portraits card" , "horizontal card"
+        userName={"salman ali"}
+        userShortName={"SA"}
+        userDesignation={"senior ui developer"}
+        userRole={"admin"}
+        userImage={"/asstes/profileImg.png"}
+        userEmail={"salman@empglabs.com"}
+        userCall={"+3211234567"}
+        ></ContactCard>
+        <ContactCard
+        cardVariant ="horizontal card" // "contact card", "portraits card" , "horizontal card"
+        userName={"salman ali"}
+        userShortName={"SA"}
+        userDesignation={"senior ui developer"}
+        userRole={"admin"}
+        userImage={"/asstes/profileImg.png"}
+        userEmail={"salman@empglabs.com"}
+        userCall={"+3211234567"}
+        ></ContactCard>
       </Container>
     </Layout>
   );
