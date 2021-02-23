@@ -1,8 +1,9 @@
-import Image from 'next/image'
-
 import Heading from "../heading/heading"
 import Role from "../role/role";
-import ContactOption from "../contactOption/contactOption";
+import ContactButton from "../ContactButton/ContactButton";
+import CardShortName from "../CardShortName/CardShortName";
+import CardDropDown from "../CardDropDown/CardDropDown";
+import CardAction from "../CardAction/CardAction";
 import Styles from "./contactCard.module.scss"
 
 const ContactCard = ({
@@ -14,161 +15,85 @@ const ContactCard = ({
     userImage,
     userEmail,
     userCall,
+    cardButton = "false",
+    cardDropDown = "false",
     ...props
 }) => {
+    console.log(cardDropDown);
     return (
         <>
-        <div className={`${Styles.contactCard} ${cardVariant === "portraits card" ? Styles.portraitsCard : ""} ${cardVariant === "horizontal card" ? Styles.horizontalCard : ""} ${cardVariant === "simple card" ? Styles.simpleCard : ""}`}>
+        <div className={`${Styles.contactCard} ${cardVariant === "portrait-large" ? Styles.portraitLarge :""} ${cardVariant === "portrait-small" ? Styles.portraitSmall :""} ${cardVariant === "horizontal" ? Styles.horizontal :""} ${cardVariant === "simple" ? Styles.simple :""} ${cardVariant === "action" ? Styles.action :""}`.trim()}>
             <div className={Styles.contactCardWrapperInner}>
-
                 {
-                    cardVariant === "portraits card" ? (
-                        <>
-                        {
-
-                            userName !== "" || userDesignation !== "" ? (
-                                <div className={Styles.headingWrapper}>
-                                    {
-                                        userName && (
-                                            <Heading variant="h2" className="cardTitle">
-                                                {userName}
-                                                {
-                                                    userRole && (
-                                                        <Role userRole={userRole}></Role>
-                                                    )
-                                                }
-                                            </Heading>
-                                        )
-                                    }
-                                    {
-                                        userDesignation && ( 
-                                            <Heading  variant="h3" className="cardsubTitle">{userDesignation}</Heading>
-                                        )
-                                    }
-                                </div>                                    
-                            ) : null
-                        }
-                        {
-                            userImage && (
-                                <div className={Styles.imgWrapper}>
-                                    <Image src={userImage} alt="me" width="64" height="64"/>
-                                </div>
-                            )
-                        }
-                        </>
+                    cardVariant === "action" ? (
+                        <CardAction></CardAction>
                     ) : null
                 }
-                
                 {
-                    cardVariant === "contact card" ? (
-                        <>
+                    cardVariant === "simple" ? (
+                            <CardShortName>{userShortName}</CardShortName>
+                    ) : null
+                }
+
+                {
+                    cardVariant === "portrait-large" || cardVariant === "portrait-small" || cardVariant ==="horizontal" ?  (
+                        <div className={Styles.imgWrapper}>
                             {
-                                userImage && (
-                                    <div className={Styles.imgWrapper}>
-                                        <Image src={userImage} alt="me" width="64" height="64"/>
-                                    </div>
+                                userImage !== "" ? (
+                                    <img src={userImage}/>
+                                ) : (
+                                    <img src="/asstes/profileImg.png"/>
                                 )
                             }
-                            {
-                                userName !== "" || userDesignation !== "" ? (
-                                        <div className={Styles.headingWrapper}>
-                                            {
-                                                userName && (
-                                                    <Heading variant="h2" className="cardTitle">{userName}</Heading>
-                                                )
-                                            }
-                                            {
-                                                userDesignation && ( 
-                                                        <Heading  variant="h3" className="cardsubTitle">{userDesignation}</Heading>
-                                                )
-                                            }
-                                        </div>
-                                    ) : ("")
-                            }
-                            {
+                        </div>
+                    ) : null
+                }
 
+                <div className={Styles.cardHeadingWrapper}>
+                    <Heading variant="h2" className="cardTitle">
+                        <span>{userName}</span>
+                        {
+                            cardVariant === "portrait-small" ? (
+                                <>
+                                    {
+                                        userRole && (
+                                            <Role userRole={userRole}></Role>
+                                        )
+                                    }
+                                </>
+                            ) : null
+                        }
+                    </Heading>
+                    {
+                        userDesignation && ( 
+                            <Heading  variant="h3" className="cardsubTitle">
+                                {userDesignation}
+                            </Heading>
+                        )
+                    }
+                </div>
+                
+                {
+                    cardVariant === "portrait-large" ? (
+                        <>
+                            {
                                 userRole && (
                                     <Role userRole={userRole}></Role>
                                 )
                             }
                         </>
-                    ) : null 
-                }
-
-                {
-                    cardVariant === "horizontal card" ? (
-                        <>
-                        {
-                            userImage && (
-                                <div className={Styles.imgWrapper}>
-                                    <Image src={userImage} alt="me" width="64" height="64"/>
-                                </div>
-                            )
-                        }
-                        {
-
-                            userName !== "" || userDesignation !== "" ? (
-                                <div className={Styles.headingWrapper}>
-                                    {
-                                        userName && (
-                                            <Heading variant="h2" className="cardTitle">
-                                                {userName}
-                                            </Heading>
-                                        )
-                                    }
-                                    {
-                                        userDesignation && ( 
-                                            <Heading  variant="h3" className="cardsubTitle">{userDesignation}</Heading>
-                                        )
-                                    }
-                                </div>                                    
-                            ) : null
-                        }
-                        </>
                     ) : null
                 }
-
                 {
-                    cardVariant === "simple card" ? (
-                        <>
-                        {
-                            userShortName && (
-                                <div className={Styles.shortNameWrapper}>
-                                    <h2>{userShortName}</h2>
-                                </div>
-                            )
-                        }  
-                        {
-                            userName !== "" || userDesignation !== "" ? (
-                                <div className={Styles.headingWrapper}>
-                                    {
-                                        userName && (
-                                            <Heading variant="h2" className="cardTitle">
-                                                {userName}
-                                            </Heading>
-                                        )
-                                    }
-                                    {
-                                        userDesignation && ( 
-                                            <Heading  variant="h3" className="cardsubTitle">{userDesignation}</Heading>
-                                        )
-                                    }
-                                </div>                                    
-                            ) : null
-                        }
-
-                        </>
-                    ) : null
+                    cardDropDown === "true" ? (
+                        <CardDropDown></CardDropDown>
+                    ): null
                 }
-                
             </div>
-
             {
-                cardVariant === "contact card" || cardVariant === "portraits card" ? (
-                    userEmail !== "" || userCall !== "" ? (
-                        <ContactOption email={userEmail} call={userCall}></ContactOption>
-                    ) : null
-                ) : null
+                cardButton && (
+                    <ContactButton email={userEmail} call={userCall}/>
+                )
             }
             </div>
         </>

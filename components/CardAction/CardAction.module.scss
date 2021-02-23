@@ -1,0 +1,16 @@
+.CardActionWrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 2.4rem;
+    .actionTimeWrapper {
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: rgba($color: #000000, $alpha: .1);
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+}

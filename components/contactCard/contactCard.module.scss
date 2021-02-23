@@ -1,77 +1,73 @@
 .contactCard {
     background-color: #ffffff;
     border: 1px solid rgba(229,231,235);
-    border-radius: 20px;
-    margin-bottom: 2rem;
+    border-radius: 10px;
     .contactCardWrapperInner {
-        padding: 1rem 1rem 2rem 1rem;
+        padding: 2rem 1.5rem 2rem 1.5rem;
         display: flex;
         flex-direction: column;
         align-items: center;
-        .headingWrapper {
-            margin-bottom: 1rem;
+        .cardHeadingWrapper {
+            display: flex;
+            flex-flow: column;
+            flex: 1;
         }
         .imgWrapper {
             overflow: hidden;
+            width: 140px;
+            height: 140px;
+            position: relative;
             img {
+                width: 100%;
+                height: auto;
                 border-radius: 50%;
             }
         }
     }
-    &.portraitsCard {
+    &.portraitLarge {
+        .cardHeadingWrapper {
+            align-items: center;
+            margin-bottom: 1.4rem;
+        }
+        .imgWrapper {
+            margin-bottom: 2rem;
+        }
+    }
+    &.portraitSmall {
         .contactCardWrapperInner {
-            flex-direction:row;
-            padding: 1rem;
-            .headingWrapper {
-                display: flex;
-                flex: 1;
-                flex-direction: column;
-                margin-bottom: 0;
-            }
+            flex-direction: row-reverse;
             .imgWrapper {
-                display: flex;
+                width: 40px;
+                height: 40px;
             }
         }
     }
-    &.horizontalCard {
+    &.horizontal {
         .contactCardWrapperInner {
-            flex-direction:row;
-            padding: 1rem;
-            .headingWrapper {
-                display: flex;
-                flex: 1;
-                flex-direction: column;
-                margin-bottom: 0;
-                margin-left: 1rem;;
+            flex-direction: row;
+            .cardHeadingWrapper {
+                padding: 0 1rem;
             }
             .imgWrapper {
-                display: flex;
+                width: 40px;
+                height: 40px;
             }
         }
     }
-    &.simpleCard {
+    &.simple {
         .contactCardWrapperInner {
-            flex-direction:row;
+            flex-direction: row;
+            align-items: stretch;
             padding:0;
-            align-items:stretch;
-            .shortNameWrapper {
-                flex: .1;
-                border-top-left-radius: 20px;
-                border-bottom-left-radius: 20px;
-                background-color: royalblue;
-                color: #ffffff;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            .cardHeadingWrapper {
+                padding: 1.2rem 1.52em 1.2rem 1.52em;
             }
-            .headingWrapper {
-                display: flex;
-                flex: 1;
-                flex-direction: column;
-                margin-bottom: 0;
-                margin-left: 1rem;
-                padding: 1rem 0  1rem 0;
-            }
+        }
+    }
+    &.action {
+        .contactCardWrapperInner {
+            flex-direction: column;
+            align-items: start;
         }
     }
 }
