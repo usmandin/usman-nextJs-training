@@ -4,7 +4,7 @@
     border-radius: 20px;
     margin-bottom: 2rem;
     .contactCardWrapperInner {
-        padding: 1rem;
+        padding: 1rem 1rem 2rem 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -21,6 +21,7 @@
     &.portraitsCard {
         .contactCardWrapperInner {
             flex-direction:row;
+            padding: 1rem;
             .headingWrapper {
                 display: flex;
                 flex: 1;
@@ -35,6 +36,7 @@
     &.horizontalCard {
         .contactCardWrapperInner {
             flex-direction:row;
+            padding: 1rem;
             .headingWrapper {
                 display: flex;
                 flex: 1;
