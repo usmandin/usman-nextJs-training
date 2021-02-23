@@ -8,7 +8,7 @@ body {
 
 a {
   color: #0d6efd;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 * {
@@ -35,11 +35,13 @@ p {
 
 dl, ol, ul {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
-
+li {
+  list-style-type: none;
+}
 ol, ul {
-  padding-left: 2rem;
+  padding-left: 0;
 }
 .textCenter {
   text-align: center !important;
@@ -49,4 +51,31 @@ ol, ul {
 }
 .textLeft {
   text-align: Left !important;
+}
+
+.displayFlex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.flexColumn {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.flexWrap {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.justifyContentCenter {
+  justify-content: center;
+}
+.alignItemsCenter {
+  align-self: center;
 }

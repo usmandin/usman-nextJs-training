@@ -13,8 +13,8 @@ const navBar = () => {
                     <a>Showcase</a>
                 </Link>{' '}
 
-                <Link href="/docs">
-                    <a>Docs</a>
+                <Link href="/gridList">
+                    <a>Grid List</a>
                 </Link>{' '}
 
                 <Link href="/blog">

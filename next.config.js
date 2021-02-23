@@ -6,6 +6,6 @@ module.exports = {
   },
   images: {
     loader: 'imgix',
-    path: 'https://media.zameen.com',
+    path: '//localhost:3000/',
   },
 }

@@ -1,0 +1,74 @@
+.contactCard {
+    background-color: #ffffff;
+    border: 1px solid rgba(229,231,235);
+    border-radius: 20px;
+    .contactCardWrapperInner {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .headingWrapper {
+            margin-bottom: 1rem;
+        }
+        .imgWrapper {
+            overflow: hidden;
+            img {
+                border-radius: 50%;
+            }
+        }
+    }
+    &.portraitsCard {
+        .contactCardWrapperInner {
+            flex-direction:row;
+            .headingWrapper {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                margin-bottom: 0;
+            }
+            .imgWrapper {
+                display: flex;
+            }
+        }
+    }
+    &.horizontalCard {
+        .contactCardWrapperInner {
+            flex-direction:row;
+            .headingWrapper {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                margin-bottom: 0;
+                margin-left: 1rem;;
+            }
+            .imgWrapper {
+                display: flex;
+            }
+        }
+    }
+    &.simpleCard {
+        .contactCardWrapperInner {
+            flex-direction:row;
+            padding:0;
+            align-items:stretch;
+            .shortNameWrapper {
+                flex: .1;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+                background-color: royalblue;
+                color: #ffffff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .headingWrapper {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                margin-bottom: 0;
+                margin-left: 1rem;
+                padding: 1rem 0  1rem 0;
+            }
+        }
+    }
+}
