@@ -19,7 +19,6 @@ const ContactCard = ({
     cardDropDown = "false",
     ...props
 }) => {
-    console.log(cardDropDown);
     return (
         <>
         <div className={`${Styles.contactCard} ${cardVariant === "portrait-large" ? Styles.portraitLarge :""} ${cardVariant === "portrait-small" ? Styles.portraitSmall :""} ${cardVariant === "horizontal" ? Styles.horizontal :""} ${cardVariant === "simple" ? Styles.simple :""} ${cardVariant === "action" ? Styles.action :""}`.trim()}>

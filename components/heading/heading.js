@@ -4,7 +4,6 @@ import classNames from "classnames/bind"
 const Heading = ({ 
     children, 
     variant,
-    userDesignation,
     className
 }) => {
 const cn = classNames.bind(styles)
