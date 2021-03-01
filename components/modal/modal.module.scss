@@ -1,0 +1,110 @@
+.modal {
+    border-radius: 20px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    .modalUpparWrapper {
+        padding: 24px 24px 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .modalIcon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            flex: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+            
+        }
+        .modalContent {
+            margin-left: 20px;
+            flex: none;
+            display: flex;
+            flex-direction: column;
+            h2 {
+                font-size: 1.125rem;
+            }
+            p {
+                font-size: 0.875rem;
+                line-height: 1.25rem;
+            }
+        }
+    }
+    .modalBottomWrapper {
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 0.75rem 1.5rem;
+        a {
+            margin-left: 0.75rem;
+            text-align: center;
+        }
+    }
+}
+
+.modal {
+    &.centerwithSingleAction,&.centerWithDoubleAction {
+        .modalUpparWrapper {
+            .modalIcon {
+                background-color: rgba(222, 247, 236, 1) ;
+            }
+            .modalContent {
+                align-items: center;
+                margin: 0;
+                text-align: center;
+                margin-top: 1.4rem;            
+            }
+        }
+    }
+    &.centerwithSingleAction {
+        .modalBottomWrapper {
+            [class^=modalButton] {
+                margin-left: 0;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+    &.centerWithDoubleAction {
+        .modalBottomWrapper {
+            padding-top: 0;
+            a {
+                flex: 1;
+                &:last-of-type {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    &.simpleAlert,&.simpleAlertLeftAlign {
+        .modalUpparWrapper {
+            flex-direction: row;
+            align-items: flex-start;
+            .modalIcon {
+                background-color: rgba(253, 232, 231, 1) ;
+            }
+        }
+        .modalBottomWrapper {
+            padding-top: 0;
+            a {
+                &:last-of-type {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+   &.simpleAlertLeftAlign {
+       .modalBottomWrapper {
+           flex-direction: row;
+           padding-left: 4.8rem;
+           a {
+               flex: none;
+               margin-left: 0;
+               margin-right: 0.75rem;
+           }
+       }
+   } 
+}

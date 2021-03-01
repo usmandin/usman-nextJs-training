@@ -15,7 +15,14 @@ const Button = ({
 }) => {
     return (
         <Link href={href}>
-            <a className={`${className === "cardLink" ? Styles.cardLink : ""} ${className === "navLink" ? Styles.navLink : ""} ${state === "Active" ? Styles.active : ""} ${state === "Disabled" ? Styles.disabled : ""} ${className === "btn" ? Styles.btn : ""} ${variant === "primaryBtn" ? Styles.primaryBtn : ""} ${variant === "secondaryBtn" ? Styles.secondaryBtn : ""}`.trim()} {...props}>
+            <a className={`
+                ${className === "cardLink" ? Styles.cardLink : ""}
+                ${className === "navLink" ? Styles.navLink : ""}
+                ${className === "btn" ? Styles.btn : ""}
+                ${state === "Active" ? Styles.active : ""}
+                ${state === "Disabled" ? Styles.disabled : ""} 
+                ${variant === "primaryBtn" ? Styles.primaryBtn : ""} 
+                ${variant === "secondaryBtn" ? Styles.secondaryBtn : ""}`.trim()} {...props}>
                 {children}
             </a>
         </Link>

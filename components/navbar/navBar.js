@@ -25,8 +25,8 @@ const navBar = () => {
                     <a>Our Team</a>
                 </Link>{' '}
 
-                <Link href="/commerce">
-                    <a>Commerce</a>
+                <Link href="/modal">
+                    <a>Modals</a>
                 </Link>{' '}
 
                 <Link href="/enterprise">

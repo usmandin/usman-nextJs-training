@@ -26,10 +26,10 @@ const Team = ({
                 </div>            
                 <div className={Styles.contentWrapper}>            
                     <div className="headingWrapper">
-                        <Heading variant="h2" className="teamTitle">{userName}</Heading>
+                        <Heading variant="h2" className={Styles.teamTitle}>{userName}</Heading>
                         {
                             userDesignation && (
-                                <Heading  variant="h3" className="teamDesignation">{userDesignation}</Heading>
+                                <Heading  variant="h3" className={Styles.teamDesignation}>{userDesignation}</Heading>
                             )
                         }
                     </div>
