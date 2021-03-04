@@ -3,6 +3,7 @@ import Intro from '../components/intro/intro'
 import Container from '../components/container/container'
 import Modal from '../components/Modal/Modal'
 
+
 export default function ModalPage() {
     const modalArray = [
         {
@@ -33,14 +34,15 @@ export default function ModalPage() {
     return (
         <Layout title="Modal Page">
             <Intro> Modal Page </Intro>
-
+            
             <Container grid={"1"}>
-            {
-                modalArray.map(function (data, i){
-                    return <Modal variant={data.variant} heading={data.heading} description={data.description} buttons={data.buttons}/>
-                })
-            }
-            </Container>
+                <Modal 
+                    variant="simple alert"
+                    heading="Deactivate account"
+                    description="Are you sure you want to deactivate your account? All of your data will be permanently removed." 
+                    buttons={[{ text: "Deactive", state:"deactive" },{ text: "Cancel", state:"cancel" }]}>
+                    </Modal>
+            </Container>           
 
         </Layout>
     )

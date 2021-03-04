@@ -2,11 +2,12 @@ import Link from 'next/link'
 import Logo from '../logo/logo'
 import Button from '../button/button'
 
-import styles from './navBar.module.scss'
+import Styles from './navBar.module.scss'
 const navBar = () => {
+
     return (
-        <nav className={styles.navbar}>
-            <div className={styles.links}>        
+        <nav className={Styles.navbar}>
+            <div className={Styles.links}>        
                 <Logo/>
 
                 <Link href="/showcase">
@@ -29,10 +30,12 @@ const navBar = () => {
                     <a>Modals</a>
                 </Link>{' '}
 
-                <Link href="/enterprise">
-                    <a>Enterprise</a>
+                <Link href="/form">
+                    <a>Form</a>
                 </Link>
-
+                <Link href="/dropDown">
+                    <a>DropDown</a>
+                </Link>
                 <Button className="btn" size="sm" variant="primaryBtn">
                     Learn
                 </Button>
