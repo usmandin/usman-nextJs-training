@@ -30,7 +30,12 @@ function DropDown() {
       <>
         <div className={Styles.dropDownWrapper}>
             <div className={Styles.dropDownHeader} role="button" onClick={showDropDown}>
-                Click Here
+                Click Here                
+                <p>
+                {
+                    isOpen ? ("Close") : "Open"
+                }
+                </p>
             </div>
             {
                 isOpen ? (
