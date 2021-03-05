@@ -4,23 +4,26 @@ import Styles from './dropDown.module.scss';
 function DropDown() {
 
     const [isOpen, setIsOpen] = useState(false);
+    const showDropDown = () => { setIsOpen(!isOpen)};
 
-    const showDropDown = () => { setIsOpen(!isOpen);};
+    const [selectedOption, setSelectedOption] = useState(null);
+
+    const onOptionClicked = value => () => {
+        setSelectedOption(value);
+        setIsOpen(false);
+    };
+
 
     const dropDown = useRef(null);
-
     useEffect(() => {
         if(!isOpen) return;
-
         function handleClick (event) {
             if(dropDown.current && !dropDown.current.contains(event.taget)) {
                 setIsOpen(false);
             }
         }
-
         window.addEventListener("click", handleClick);
         return () => window.removeEventListener("click", handleClick);
-
     }, [
         isOpen
     ]);
@@ -30,23 +33,19 @@ function DropDown() {
       <>
         <div className={Styles.dropDownWrapper}>
             <div className={Styles.dropDownHeader} role="button" onClick={showDropDown}>
-                Click Here                
-                <p>
-                {
-                    isOpen ? ("Close") : "Open"
-                }
-                </p>
+                <p>{selectedOption ? (selectedOption) : "Select Item"}</p>
+                <p>{isOpen ? "Close" : "Open"}</p>
             </div>
             {
                 isOpen ? (
                     <>
                     <ul className={Styles.DropDownList} ref={dropDown}>
-                        <li>One</li>
-                        <li>Two</li>
-                        <li>Thee</li>
-                        <li>Four</li>
-                        <li>Five</li>
-                    </ul> 
+                        <li role="button" id="1" onClick={onOptionClicked("one")}>One</li>
+                        <li role="button" id="1" onClick={onOptionClicked("Two")}>Two</li>
+                        <li role="button" id="1" onClick={onOptionClicked("Three")}>Three</li>
+                        <li role="button" id="1" onClick={onOptionClicked("Four")}>Four</li>
+                        <li role="button" id="1" onClick={onOptionClicked("Five")}>Five</li>
+                    </ul>
                     </>
                 ) : null
             }

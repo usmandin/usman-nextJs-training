@@ -17,6 +17,9 @@
         cursor: pointer;
         width: 100%;
         padding: 1rem;
+        p {
+            margin-bottom: 0;
+        }
     }
     .DropDownList {
         box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;

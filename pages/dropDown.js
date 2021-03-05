@@ -7,8 +7,8 @@ import DropDown from '../components/dropDown/dropDown'
 export default function DropDownPage() {
 
     return (
-        <Layout title="Drop Down Page">
-            <Intro> Form  Page </Intro>
+        <Layout title="DropDown Page">
+            <Intro> DropDown Page </Intro>
             <Container>
                 <DropDown/>
             </Container>
