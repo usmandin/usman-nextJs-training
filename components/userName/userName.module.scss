@@ -1,0 +1,12 @@
+.userNameWrapper {
+    color: var(--user-text-color,#69a7f7);
+    margin-bottom: 0.938rem;
+    svg {
+        color: var(--user-text-color,#69a7f7);
+        margin-right: .5rem;
+    }
+    span {
+        line-height: 1rem;
+        font-size: 0.75rem;
+    }
+}

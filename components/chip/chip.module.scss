@@ -1,0 +1,25 @@
+.chip {
+    color: var(--chip-text-color,#fff);
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    background-color: var(--chip-bg-color,#7ad896);    
+    border-radius: 1.563rem;
+    border:1px solid var(--chip-bodrer-color,#7ad896);
+    &.chipBorderd {
+        color: var(--chip-text-color,#3f4959);
+        border:1px solid var(--chip-bodrer-color,#d0d9ec);
+        background-color: var(--chip-bg-color,#fff);
+    }
+    &.chipBlue {
+        color: var(--chip-text-color,#fff);
+        border:1px solid var(--chip-bodrer-color,#69a7f7);
+        background-color: var(--chip-bg-color,#69a7f7);
+    }
+    &.chipOrange {
+        color: var(--chip-text-color,#fff);
+        border:1px solid var(--chip-bodrer-color,#f6c360);
+        background-color: var(--chip-bg-color,#f6c360);
+    }
+}

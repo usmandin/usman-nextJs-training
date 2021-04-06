@@ -44,6 +44,11 @@
         font-weight: 500;
         text-transform: capitalize;
     }
+    &.linkBtn {
+        border: none;
+        border-radius: 0;
+        color: #3f4959;
+    }
 }
 .cardLink+.cardLink {
     margin-left: 1rem;
